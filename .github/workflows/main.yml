@@ -9,7 +9,7 @@ jobs:
     
     - uses: Azure/docker-login@v1
       with:
-        login-server: contoso.azurecr.io
+        login-server: actionatbagga.azurecr.io
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     
@@ -36,6 +36,6 @@ jobs:
           manifests/deployment.yml
           manifests/service.yml
         images: |
-          demo.azurecr.io/k8sdemo:${{ github.sha }}
+          actionatbagga.azurecr.io/k8sdemo:${{ github.sha }}
         imagepullsecrets: |
           demo-k8s-secret
